@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Area= of Triangle, in PHP" />
+  <meta name="description" content="Area of Triangle, in PHP" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Isaac Ip" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,28 +29,22 @@
       <div class="right-image">
         <img src="./images/area_of_triangle.png" alt="triangle image" width="250" />
       </div>
-      <br />
-      <div class="page-content">Enter the length and width in cm.</div>
       <div class="page-content-php">
-        <form action="answer.php" method="GET">
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type=" text" pattern="-?[0-9]*(\.[0-9]+)?" name="base-length-of-triangle">
-            <label class="mdl-textfield__label" for="base-length-of-rectangle">Base Length of Triangle (cm)</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <br />
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type=" text" pattern="-?[0-9]*(\.[0-9]+)?" name="height-of-triangle">
-            <label class="mdl-textfield__label" for="height-of-rectangle">Height of Triangle (cm)</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <br />
-          <!-- Accent-colored raised button with ripple -->
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-            type="submit">
-            Calculate
-          </button>
-        </form>
+        <div id="user-info">
+          <?php
+          $baseLengthOfTriangle = $_GET["base-length-of-triangle"];
+          $heightOfTriangle = $_GET["height-of-triangle"];
+
+          // process
+          $area = $baseLengthOfTriangle * $heightOfTriangle / 2;
+
+          // output
+          echo "If a triangle has length = " . $baseLengthOfTriangle . " cm and the height = " . $heightOfTriangle . " cm:";
+          echo "<br />";
+          echo "<br />";
+          echo "The area of the triangle is " . $area . " cm².";
+          ?>
+        </div>
       </div>
     </main>
   </div>
